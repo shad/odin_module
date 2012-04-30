@@ -16,14 +16,14 @@ any other version.
 INSTALL
 -------
 
-Place the module zip (com.fott.odin-iphone-0.1.zip) your modules directory (I
+Place the module zip (com.foodonthetable.odin-iphone-0.1.zip) your modules directory (I
 typically unzip it there, but I'm not sure that's actually required).
 
 Register your module with your application by editing `tiapp.xml` and adding
 your module.  Example:
 
     <modules>
-      <module version="0.1">com.fott.odin</module>
+      <module version="0.1">com.foodonthetable.odin</module>
     </modules>
 
 
@@ -35,7 +35,7 @@ To use your module in code, you will need to require it.
 
 Example:
 
-    var odin_module = require('com.fott.odin');
+    var odin_module = require('com.foodonthetable.odin');
     var odin = odin_module.getODIN();
 
 NOTE (Fair Warning)
