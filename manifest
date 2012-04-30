@@ -1,0 +1,12 @@
+version: 0.1
+description: ODIN Support for iPhone with Titanium
+author: Shad Reynolds
+license: MIT
+copyright: Copyright (c) 2012 by Shad Reynolds
+
+# these should not be edited
+name: foodonthetable_odin
+moduleid: com.foodonthetable.odin
+guid: 912b57c3-2bc0-48d3-bad5-e0bd8916eeaf
+platform: iphone
+minsdk: 1.7.0
