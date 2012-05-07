@@ -16,8 +16,10 @@ var odin = require('com.foodonthetable.odin');
 Ti.API.info("module is => " + odin);
 
 var odinText = odin.getODIN();
+var macAddrText = odin.getMacAddr();
 
-label.text = odinText;
+label.text = odinText + "\n" + macAddrText;
 
 Ti.API.info("ODIN = " + odinText);
+Ti.API.info("MACADDR = " + macAddrText);
 

@@ -130,6 +130,49 @@
 #pragma Public APIs
 
 
+// Get Mac Address
+-(id)getMacAddr
+{
+    int                 mib[6];
+    size_t              len;
+    char                *buf;
+    unsigned char       *ptr;
+    struct if_msghdr    *ifm;
+    struct sockaddr_dl  *sdl;
+    
+    mib[0] = CTL_NET;
+    mib[1] = AF_ROUTE;
+    mib[2] = 0;
+    mib[3] = AF_LINK;
+    mib[4] = NET_RT_IFLIST;
+    
+    if ((mib[5] = if_nametoindex("en0")) == 0) {
+        //NSLog(@"ODIN-1.1: if_nametoindex error");
+        return nil;
+    }
+    
+    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
+        //NSLog(@"ODIN-1.1: sysctl 1 error");
+        return nil;
+    }
+    
+    if ((buf = malloc(len)) == NULL) {
+        //NSLog(@"ODIN-1.1: malloc error");
+        return nil;
+    }
+    
+    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
+        //NSLog(@"ODIN-1.1: sysctl 2 error");
+        return nil;
+    }
+    
+    ifm = (struct if_msghdr *)buf;
+    sdl = (struct sockaddr_dl *)(ifm + 1);
+    ptr = (unsigned char *)LLADDR(sdl);
+
+    return [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
+            *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
+}
 -(id)getODIN
 {
 // Step 1: Get MAC address
