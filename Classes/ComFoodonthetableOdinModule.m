@@ -129,6 +129,24 @@
 
 #pragma Public APIs
 
+// ID for advertising.  This is coming in IOS6, which some people alread have,
+// so let's go ahead and pass it back if we have it (for MDOTM & Co).
+-(id)getIdentifierForAdvertising
+{
+  NSString* adid;
+  if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForAdvertising)]) {
+    adid = [[UIDevice currentDevice] identifierForAdvertising];
+    if (adid) {
+      return adid;
+    } else {
+      return @"";
+    }
+  } else {
+    return @"";
+  }
+}
+
+
 
 // Get Mac Address
 -(id)getMacAddr
