@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
 description: ODIN Support for iPhone with Titanium
 author: Shad Reynolds
 license: MIT
@@ -9,4 +9,4 @@ name: foodonthetable_odin
 moduleid: com.foodonthetable.odin
 guid: 912b57c3-2bc0-48d3-bad5-e0bd8916eeaf
 platform: iphone
-minsdk: 2.0.1.GA2
+minsdk: 2.1.3.v20120920181610

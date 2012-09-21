@@ -131,7 +131,7 @@
 
 // ID for advertising.  This is coming in IOS6, which some people alread have,
 // so let's go ahead and pass it back if we have it (for MDOTM & Co).
--(id)getIdentifierForAdvertising
+-(id)getIdentifierForAdvertising:(id)value
 {
   NSString* adid;
   if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForAdvertising)]) {
@@ -149,7 +149,7 @@
 
 
 // Get Mac Address
--(id)getMacAddr
+-(id)getMacAddr:(id)value
 {
     int                 mib[6];
     size_t              len;
@@ -191,7 +191,7 @@
     return [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
             *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
 }
--(id)getODIN
+-(id)getODIN:(id)value
 {
 // Step 1: Get MAC address
   

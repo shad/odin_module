@@ -25,8 +25,8 @@
 @interface ComFoodonthetableOdinModule : TiModule 
 {
 }
-- (id) getIdentifierForAdvertising;
-- (id) getMacAddr;
-- (id) getODIN;
+- (id) getIdentifierForAdvertising:(id)value;
+- (id) getMacAddr:(id)value;
+- (id) getODIN:(id)value;
 
 @end
