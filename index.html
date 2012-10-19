@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Odin module : ODIN Support for Titanium on iOS" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Odin module</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/shad/odin_module">View on GitHub</a>
+
+          <h1 id="project_title">Odin module</h1>
+          <h2 id="project_tagline">ODIN Support for Titanium on iOS</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/shad/odin_module/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/shad/odin_module/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>ODIN (Module for Titanium)</h1>
+
+<p>Apple is removing support for UDID on the iPhone.  Open Device Identification
+Number (ODIN) is replacement identifier required by some ad networks as
+a replacement.  ODIN is basically a sha hash of the MAC Address.</p>
+
+<p>For more information, please see: <a href="http://www.odinmobile.org/">http://www.odinmobile.org/</a></p>
+
+<p>This module simply wraps up ODIN generation into a titanium module.</p>
+
+<p>NOTE: This was built with Titanium 1.7.0 and has not been tested against
+any other version.</p>
+
+<h2>INSTALL</h2>
+
+<p>Place the module zip (com.foodonthetable.odin-iphone-0.1.zip) your modules directory (I
+typically unzip it there, but I'm not sure that's actually required).</p>
+
+<p>Register your module with your application by editing <code>tiapp.xml</code> and adding
+your module.  Example:</p>
+
+<pre><code>&lt;modules&gt;
+  &lt;module version="0.1"&gt;com.foodonthetable.odin&lt;/module&gt;
+&lt;/modules&gt;
+</code></pre>
+
+<h2>USING YOUR MODULE IN CODE</h2>
+
+<p>To use your module in code, you will need to require it. </p>
+
+<p>Example:</p>
+
+<pre><code>var odin_module = require('com.foodonthetable.odin');
+var odin = odin_module.getODIN();
+</code></pre>
+
+<h2>NOTE (Fair Warning)</h2>
+
+<p>This code is provided AS IS.  Feel free to fork and modify it to your heart's
+content.  I'm happy to answer questions, but will likely not be actively
+maintaining this project.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Odin module maintained by <a href="https://github.com/shad">shad</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
